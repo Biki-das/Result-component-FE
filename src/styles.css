@@ -1,0 +1,279 @@
+@import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap');
+
+
+*,
+::after,
+::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    font-family: 'Hanken Grotesk', sans-serif;
+    height: 100%;
+}
+
+:root{
+
+    /* primary colors */
+
+    --light-red: hsl(0, 100%, 67%);
+    --orange-yellow: hsl(39,100% 56%);
+    --Green-teal: hsl(166, 100%, 37%);
+    --Cobalt-blue: hsl(234, 85%, 45%);
+
+   /* Gradients */
+
+   --light-slate-blue-bg: hsl(252, 100%, 67%);
+   --light-royal-blue-bg: hsl(241, 81%, 54%);
+   --violet-blue-circle:  hsla(256, 72%, 46%, 1);
+   --persian-blue-circle: hsla(241, 72%, 46%, 0);
+
+   /* Neautral */
+
+   --white: hsl(0,0%,100%);
+   --pale-blue: hsl(221,100%,96%);
+   --light-lavender: hsl(241,100%,89%);
+   --dark-gray-blue: hsl(224,30%,27%);
+
+}
+
+
+#container {
+    width: 100%;
+    height: 100%;
+}
+
+
+#result{
+    overflow: hidden;
+    background: linear-gradient(var(--light-slate-blue-bg),var(--Cobalt-blue));
+    height: 360px;
+    width: 100%;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+
+}
+
+
+h2{
+    text-align: center;
+    color: var(--light-lavender);
+    font-size: 1.1rem;
+    font-weight: light;
+    margin-top: 2rem;
+}
+
+
+#score-circle{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 130px;
+    margin: 0 auto;
+    border-radius: 50%;
+    height: 130px;
+    margin-top: 1rem;
+    background: linear-gradient(var(--violet-blue-circle),var(--persian-blue-circle))
+}
+
+#score-num {
+    font-size: 3.2rem;
+    color: white;
+    font-weight: bold;
+}
+
+#total-score {
+    color: var(--light-lavender);
+    opacity: 0.5;
+}
+
+#score-feedback-text > p:first-child{
+    text-align: center;
+    color: white;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+}
+
+#score-feedback-text > p:nth-child(2){
+    text-align: center;
+    color: lavender;
+    opacity: 0.8;
+    margin-top: 1.1rem;
+}
+
+#summary{
+    height: 430px;
+    padding: 2rem;
+}
+
+#summary-list{
+    margin-top: 2rem;
+}
+
+
+.category-list{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 1rem;
+    height: 50px;
+    border-radius: 8%;
+}
+
+
+
+#summary-list > .category-list:first-child{
+    background-color: #fff6f5;
+}
+
+
+#summary-list > .category-list:nth-child(2){
+    background-color: #fffbf2;
+    margin-top: 1rem;
+
+}
+
+
+#summary-list > .category-list:nth-child(3){
+    background-color:  #f2fbfa;
+    margin-top: 1rem;
+
+}
+
+
+
+#summary-list > .category-list:last-child{
+    background-color:  #f3f3fd;
+    margin-top: 1rem;
+
+}
+
+
+.result-category-name{
+    display: flex;
+    gap: .5rem;
+}
+
+.category-score{
+    display: flex;
+    gap: 0.5rem;
+}
+
+#reaction {
+    color: var(--light-red);
+}
+#memory {
+    color: #d8b865;
+}
+#verbal {
+    color: var(--Green-teal);
+}
+#visual{
+    color: var(--Cobalt-blue);
+}
+
+button{
+    font-family: inherit;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: var(--dark-gray-blue);
+    border: none;
+    color: white;
+    border-radius: 50px 50px 50px 50px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover{
+    background-color: var(--Cobalt-blue);
+}
+
+
+.category-total-score {
+    opacity: 0.4;
+}
+
+#mobile-break-text{
+    display: block;
+}
+#desktop-break-text{
+    display: none;
+}
+
+
+@media screen and (min-width: 620px) {
+
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #container {
+        display: flex;
+        width: 720px;
+        margin: 0 auto;
+        height: 510px;
+
+    }
+    
+    #result {
+        border-top-right-radius: 10%;
+        border-top-left-radius: 10%;
+        height: 500px;
+        width: 370px;
+        transform: translateX(6%);
+    }
+
+    
+    #summary {
+        height: 500px;
+        width: 370px;
+        box-shadow: var(--pale-blue) 0px 7px 29px 0px;
+        border-top-right-radius: 10%;
+        border-bottom-right-radius: 10%;
+
+    }
+
+    #summary h3{
+        margin-left: 1.5rem;
+    }
+   
+    #summary-list{
+        margin-left: 1.5rem;
+
+    }
+
+
+    #score-circle {
+        margin-top: 40px;
+        height: 190px;
+        width: 190px;
+    }
+
+    #mobile-break-text{
+        display: none;
+    }
+
+    #desktop-break-text{
+        display: block;
+    }
+
+    button{
+        margin-top: 2.5rem;
+        margin-left: 1rem;
+    }
+
+    button:active{
+        scale: 1.1;
+    }
+}
